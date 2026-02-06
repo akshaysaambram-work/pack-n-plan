@@ -1,14 +1,15 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import { auth, db } from "@/lib/firebase";
 import {
   User,
-  signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
-  signOut,
   onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut,
 } from "firebase/auth";
-import { auth } from "@/lib/firebase";
+import { addDoc, collection } from "firebase/firestore";
+import { createContext, useContext, useEffect, useState } from "react";
 
 interface AuthContextType {
   user: User | null;
@@ -40,7 +41,19 @@ export function AuthProvider({
   };
 
   const signUp = async (email: string, password: string) => {
-    await createUserWithEmailAndPassword(auth, email, password);
+    const { user } = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password,
+    );
+    await addDoc(collection(db, "users", user.uid), {
+      bio: "",
+      displayName: user.displayName || "",
+      location: "",
+      travelPreferences: "",
+      emailNotifications: true,
+      marketingEmails: true,
+    });
   };
 
   const logout = async () => {

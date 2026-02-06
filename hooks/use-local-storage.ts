@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 
 export function useLocalStorage<T>(
@@ -12,6 +14,7 @@ export function useLocalStorage<T>(
     }
 
     try {
+      if (globalThis.localStorage === undefined) return initialValue;
       const item = globalThis.localStorage.getItem(key);
       return item ? JSON.parse(item) : initialValue;
     } catch (error) {
