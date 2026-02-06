@@ -9,7 +9,7 @@ export default function SavedTripsPage() {
         <div className="container mx-auto max-w-7xl py-8">
           <div className="mb-8 text-center">
             <h1 className="text-3xl font-bold">Your Saved Trips</h1>
-            <p className="mt-2 text-muted-foreground">
+            <p className="text-muted-foreground mt-2">
               View and manage your saved travel itineraries
             </p>
           </div>

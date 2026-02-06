@@ -111,7 +111,7 @@ export function TravelChecklist() {
                   animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0 }}
                   transition={{ duration: 0.2 }}
-                  className="flex items-center gap-2 rounded-lg p-2 hover:bg-muted"
+                  className="hover:bg-muted flex items-center gap-2 rounded-lg p-2"
                 >
                   <Checkbox
                     checked={item.checked}
@@ -138,7 +138,7 @@ export function TravelChecklist() {
           </motion.div>
 
           <div className="flex items-center justify-between border-t pt-4">
-            <p className="text-sm text-muted-foreground">
+            <p className="text-muted-foreground text-sm">
               {items.filter((item) => item.checked).length} of {items.length}{" "}
               items packed
             </p>

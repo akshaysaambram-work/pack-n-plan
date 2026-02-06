@@ -1,7 +1,7 @@
 "use client";
 
-import { createContext, useContext } from "react";
 import { useLocalStorage } from "@/hooks/use-local-storage";
+import { createContext, useContext } from "react";
 
 interface Preferences {
   language: string;
@@ -39,19 +39,19 @@ const PreferencesContext = createContext<PreferencesContextType>({
 
 export function PreferencesProvider({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   const [preferences, setPreferences] = useLocalStorage<Preferences>(
     "user-preferences",
     defaultPreferences,
   );
 
   const updatePreferences = (newPreferences: Partial<Preferences>) => {
-    setPreferences((prev) => ({
-      ...prev,
+    setPreferences({
+      ...preferences,
       ...newPreferences,
-    }));
+    });
   };
 
   const resetPreferences = () => {

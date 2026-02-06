@@ -15,7 +15,7 @@ export function CTA() {
       viewport={{ once: true }}
     >
       <div className="container">
-        <div className="relative overflow-hidden rounded-3xl bg-primary px-6 py-20 text-center text-primary-foreground">
+        <div className="bg-primary text-primary-foreground relative overflow-hidden rounded-3xl px-6 py-20 text-center">
           <motion.div
             className="absolute inset-0 bg-[linear-gradient(to_right,transparent_0%,rgba(255,255,255,0.2)_50%,transparent_100%)]"
             animate={{
@@ -38,7 +38,7 @@ export function CTA() {
               Ready to Start Your Adventure?
             </motion.h2>
             <motion.p
-              className="mx-auto mt-4 max-w-2xl text-primary-foreground/80"
+              className="text-primary-foreground/80 mx-auto mt-4 max-w-2xl"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}

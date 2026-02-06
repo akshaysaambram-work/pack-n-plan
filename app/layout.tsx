@@ -1,17 +1,18 @@
-import { Suspense } from "react";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import { ThemeProvider } from "@/contexts/theme-context";
-import { NotificationProvider } from "@/contexts/notification-context";
-import { ModalProvider } from "@/contexts/modal-context";
+import { Navigation } from "@/components/navigation";
+import { Toaster } from "@/components/ui/toaster";
+import { AuthProvider } from "@/contexts/auth-context";
 import { LoadingProvider } from "@/contexts/loading-context";
+import { ModalProvider } from "@/contexts/modal-context";
+import { NotificationProvider } from "@/contexts/notification-context";
+import { OfflineProvider } from "@/contexts/offline-context";
 import { PreferencesProvider } from "@/contexts/preferences-context";
 import { SearchProvider } from "@/contexts/search-context";
-import { OfflineProvider } from "@/contexts/offline-context";
-import { Navigation } from "@/components/navigation";
-import { AuthProvider } from "@/contexts/auth-context";
-import { Toaster } from "@/components/ui/toaster";
+import { ThemeProvider } from "@/contexts/theme-context";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { Suspense } from "react";
+
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,9 +26,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -36,7 +37,6 @@ export default function RootLayout({
           href="https://fonts.googleapis.com"
           crossOrigin="anonymous"
         />
-        <link rel="preload" as="image" href="/api/favicon?stroke=blue" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className={inter.className}>
@@ -49,7 +49,7 @@ export default function RootLayout({
                     <Suspense fallback={<div>Loading...</div>}>
                       <ThemeProvider>
                         <AuthProvider>
-                          <div className="min-h-screen bg-background">
+                          <div className="bg-background min-h-screen">
                             <Navigation />
                             <main className="container mx-auto px-4 py-6">
                               {children}

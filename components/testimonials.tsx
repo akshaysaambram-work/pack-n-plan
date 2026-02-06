@@ -64,7 +64,7 @@ export function Testimonials() {
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
             What Our Travelers Say
           </h2>
-          <p className="mt-4 text-muted-foreground">
+          <p className="text-muted-foreground mt-4">
             Join thousands of satisfied travelers who have discovered their
             perfect trips
           </p>
@@ -78,7 +78,7 @@ export function Testimonials() {
               whileHover={{ y: -10 }}
               transition={{ duration: 0.2 }}
             >
-              <Card className="h-full transition-colors duration-300 ease-in-out hover:border-primary">
+              <Card className="hover:border-primary h-full transition-colors duration-300 ease-in-out">
                 <CardContent className="pt-6">
                   <div className="flex items-start space-x-4">
                     <Avatar>
@@ -89,15 +89,15 @@ export function Testimonials() {
                       <AvatarFallback>{testimonial.name[0]}</AvatarFallback>
                     </Avatar>
                     <div>
-                      <p className="font-semibold text-primary">
+                      <p className="text-primary font-semibold">
                         {testimonial.name}
                       </p>
-                      <p className="text-xs text-muted-foreground">
+                      <p className="text-muted-foreground text-xs">
                         {testimonial.role}
                       </p>
                     </div>
                   </div>
-                  <p className="mt-4 text-muted-foreground">
+                  <p className="text-muted-foreground mt-4">
                     {testimonial.content}
                   </p>
                 </CardContent>

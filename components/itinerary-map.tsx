@@ -97,7 +97,7 @@ export function ItineraryMap({ locations }: ItineraryMapProps) {
           onLoad={() => setIsLoading(false)}
         >
           {isLoading && (
-            <div className="absolute inset-0 flex items-center justify-center bg-background/80">
+            <div className="bg-background/80 absolute inset-0 flex items-center justify-center">
               <Loader className="h-6 w-6 animate-spin" />
             </div>
           )}

@@ -181,7 +181,7 @@ export function SettingsForm() {
                 <label className="text-sm font-medium">Theme</label>
                 <ThemeSwitcher />
               </div>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-muted-foreground text-sm">
                 Select your preferred theme mode
               </p>
             </div>
@@ -190,7 +190,7 @@ export function SettingsForm() {
                 <label className="text-sm font-medium">Color Scheme</label>
                 <ColorSchemeSwitcher />
               </div>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-muted-foreground text-sm">
                 Choose your preferred color scheme
               </p>
             </div>

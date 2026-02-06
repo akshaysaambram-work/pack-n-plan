@@ -127,7 +127,7 @@ export function ItineraryMapPreview() {
                   onCloseClick={() => setSelectedLocation(null)}
                 >
                   <div className="max-w-xs">
-                    <h3 className="font-semibold text-primary">
+                    <h3 className="text-primary font-semibold">
                       {selectedLocation.title}
                     </h3>
                     <p className="mt-1 text-sm text-gray-600">
@@ -139,7 +139,7 @@ export function ItineraryMapPreview() {
                     <ul className="mt-2 text-sm text-gray-600">
                       {selectedLocation.places.map((place, index) => (
                         <li key={index} className="flex items-center gap-1">
-                          <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                          <span className="bg-primary h-1.5 w-1.5 rounded-full" />
                           {place}
                         </li>
                       ))}
@@ -151,7 +151,7 @@ export function ItineraryMapPreview() {
           </LoadScript>
 
           {isLoading && (
-            <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-background/80">
+            <div className="bg-background/80 absolute inset-0 flex items-center justify-center rounded-lg">
               <Loader className="h-8 w-8 animate-spin" />
             </div>
           )}
@@ -161,14 +161,16 @@ export function ItineraryMapPreview() {
           {parisLocations.map((location, index) => (
             <Button
               key={index}
-              variant={selectedLocation === location ? "default" : "outline-solid"}
+              variant={
+                selectedLocation === location ? "default" : "outline-solid"
+              }
               className="justify-start"
               onClick={() => {
                 handleMarkerClick(location);
                 mapInstance?.panTo(location.position);
               }}
             >
-              <span className="mr-2 flex h-6 w-6 items-center justify-center rounded-full bg-primary/10">
+              <span className="bg-primary/10 mr-2 flex h-6 w-6 items-center justify-center rounded-full">
                 {index + 1}
               </span>
               {location.title}

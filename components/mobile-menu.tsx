@@ -65,7 +65,7 @@ export function MobileMenu() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.4 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-40 bg-background/80 backdrop-blur-xs md:hidden"
+              className="bg-background/80 fixed inset-0 z-40 backdrop-blur-xs md:hidden"
               onClick={closeMenu}
             />
             <motion.div
@@ -73,7 +73,7 @@ export function MobileMenu() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", bounce: 0, duration: 0.3 }}
-              className="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-background p-6 shadow-lg md:hidden"
+              className="bg-background fixed inset-y-0 right-0 z-50 w-full max-w-xs p-6 shadow-lg md:hidden"
             >
               <div className="flex items-center justify-between">
                 <Link

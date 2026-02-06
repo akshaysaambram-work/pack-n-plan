@@ -33,9 +33,9 @@ export function AnimatedHero() {
       initial="hidden"
       animate="visible"
     >
-      <div className="absolute inset-0 rounded-xl bg-linear-to-b from-primary/25 to-transparent" />
+      <div className="from-primary/25 absolute inset-0 rounded-xl bg-linear-to-b to-transparent" />
       <motion.div
-        className="absolute right-0 top-0 -z-10 h-full w-full"
+        className="absolute top-0 right-0 -z-10 h-full w-full"
         animate={{
           scale: [1, 1.2, 1],
           rotate: [0, 10, 0],
@@ -49,7 +49,7 @@ export function AnimatedHero() {
         <Globe2 className="size-full opacity-5" />
       </motion.div>
 
-      <div className="container relative">
+      <div className="relative container">
         <motion.h1
           className="text-center text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl"
           variants={itemVariants}
@@ -57,7 +57,7 @@ export function AnimatedHero() {
           Your Journey Begins Here
         </motion.h1>
         <motion.p
-          className="mx-auto mt-6 max-w-[700px] text-center text-lg text-muted-foreground"
+          className="text-muted-foreground mx-auto mt-6 max-w-[700px] text-center text-lg"
           variants={itemVariants}
         >
           Discover the world with our AI-powered travel companion. Create

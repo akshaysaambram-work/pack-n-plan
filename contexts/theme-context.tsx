@@ -48,6 +48,13 @@ export function ThemeProvider({
   const [theme, setTheme] = useLocalStorage<Theme>("theme", defaultTheme);
   const [color, setColor] = useLocalStorage<Color>("color", defaultColor);
 
+  const updateFavicon = (color: string) => {
+    const link = document.querySelector("link[rel='icon']") as HTMLLinkElement;
+    if (link) {
+      link.href = `/api/favicon?stroke=${color}`;
+    }
+  };
+
   useEffect(() => {
     const root = globalThis.document.documentElement;
     root.classList.remove("light", "dark");
@@ -83,6 +90,7 @@ export function ThemeProvider({
     colors.forEach((c) => {
       root.classList.remove(`theme-${c}`);
     });
+    updateFavicon(color);
     root.classList.add(`theme-${color}`);
   }, [color]);
 

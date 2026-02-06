@@ -102,7 +102,7 @@ export function DestinationWeather({ destination }: DestinationWeatherProps) {
             </motion.div>
             <div>
               <p className="text-2xl font-bold">{weather.temperature}°C</p>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-muted-foreground text-sm">
                 {weather.condition}
               </p>
             </div>

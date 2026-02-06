@@ -9,7 +9,7 @@ export default function ProfilePage() {
         <div className="container mx-auto max-w-4xl py-8">
           <div className="mb-8 text-center">
             <h1 className="text-3xl font-bold">Your Profile</h1>
-            <p className="mt-2 text-muted-foreground">
+            <p className="text-muted-foreground mt-2">
               Manage your personal information and preferences
             </p>
           </div>

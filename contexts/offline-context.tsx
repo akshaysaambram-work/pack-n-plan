@@ -29,7 +29,7 @@ export function OfflineProvider({ children }: { children: React.ReactNode }) {
     <OfflineContext.Provider value={{ isOnline }}>
       {children}
       {!isOnline && (
-        <div className="fixed bottom-4 left-4 z-50 flex items-center gap-2 rounded-lg bg-destructive p-4 text-destructive-foreground">
+        <div className="bg-destructive text-destructive-foreground fixed bottom-4 left-4 z-50 flex items-center gap-2 rounded-lg p-4">
           <WifiOff className="h-5 w-5" />
           <p className="text-sm font-medium">
             You are currently offline. Some features may be unavailable.

@@ -41,7 +41,7 @@ export function Navigation() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-              <PlaneLine className="size-6 stroke-primary" />
+              <PlaneLine className="stroke-primary size-6" />
               <span className="text-lg font-bold">PackNPlan</span>
             </Link>
           </div>

@@ -53,10 +53,10 @@ export function ModalProvider({ children }: { children: React.ReactNode }) {
               exit={{ opacity: 0, scale: 0.95 }}
               className="fixed inset-0 z-50 flex items-center justify-center p-4"
             >
-              <div className="relative w-full max-w-lg rounded-lg bg-background p-6 shadow-xl">
+              <div className="bg-background relative w-full max-w-lg rounded-lg p-6 shadow-xl">
                 <button
                   onClick={closeModal}
-                  className="absolute right-4 top-4 rounded-full p-1 hover:bg-muted"
+                  className="hover:bg-muted absolute top-4 right-4 rounded-full p-1"
                 >
                   <X className="h-4 w-4" />
                 </button>

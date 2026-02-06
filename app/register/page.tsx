@@ -7,7 +7,7 @@ export default function RegisterPage() {
       <div className="container mx-auto max-w-md py-12">
         <div className="mb-8 text-center">
           <h1 className="text-3xl font-bold">Create an Account</h1>
-          <p className="mt-2 text-muted-foreground">
+          <p className="text-muted-foreground mt-2">
             Join PackNPlan to start planning your adventures
           </p>
         </div>

@@ -226,14 +226,14 @@ export function TempItinerary() {
                     <h3 className="text-lg font-semibold">
                       Day {index + 1}: {day.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-muted-foreground text-sm">
                       {day.location}
                     </p>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent>
                   <CardContent className="pt-0">
-                    <div className="relative ml-2 border-l-2 border-muted pl-8 pt-2">
+                    <div className="border-muted relative ml-2 border-l-2 pt-2 pl-8">
                       {day.activities.map((activity, actIndex) => (
                         <motion.div
                           key={actIndex}
@@ -242,17 +242,17 @@ export function TempItinerary() {
                           transition={{ delay: actIndex * 0.1 }}
                           className="relative mb-8 last:mb-0"
                         >
-                          <div className="absolute -left-[41px] flex h-6 w-6 items-center justify-center rounded-full bg-background shadow-xs ring-1 ring-muted">
+                          <div className="bg-background ring-muted absolute -left-[41px] flex h-6 w-6 items-center justify-center rounded-full shadow-xs ring-1">
                             <Clock className="h-3 w-3" />
                           </div>
                           <div className="space-y-2">
                             <div className="flex items-center justify-between">
                               <h4 className="font-medium">{activity.title}</h4>
-                              <span className="text-sm text-muted-foreground">
+                              <span className="text-muted-foreground text-sm">
                                 {activity.time}
                               </span>
                             </div>
-                            <p className="text-sm text-muted-foreground">
+                            <p className="text-muted-foreground text-sm">
                               {activity.description}
                             </p>
                             <div className="flex items-center gap-3">

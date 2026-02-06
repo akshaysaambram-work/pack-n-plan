@@ -89,7 +89,7 @@ export function SavedTripsGrid() {
   if (isLoading) {
     return (
       <div className="flex min-h-[400px] items-center justify-center">
-        <Plane className="h-8 w-8 animate-pulse stroke-primary" />
+        <Plane className="stroke-primary h-8 w-8 animate-pulse" />
       </div>
     );
   }
@@ -98,7 +98,7 @@ export function SavedTripsGrid() {
     return (
       <div className="py-12 text-center">
         <h2 className="mb-2 text-xl font-semibold">No saved trips yet</h2>
-        <p className="mb-4 text-muted-foreground">
+        <p className="text-muted-foreground mb-4">
           Start planning your next adventure!
         </p>
         <Button asChild>
@@ -129,14 +129,14 @@ export function SavedTripsGrid() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-muted-foreground text-sm">
                 Travel Style: {trip.travelStyle}
               </p>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-muted-foreground text-sm">
                 Budget Level: {trip.budget}/5
               </p>
               {trip.interests && (
-                <p className="mt-2 text-sm text-muted-foreground">
+                <p className="text-muted-foreground mt-2 text-sm">
                   Interests: {trip.interests}
                 </p>
               )}

@@ -73,7 +73,7 @@ export function NotificationProvider({
       value={{ notifications, showNotification, removeNotification }}
     >
       {children}
-      <div className="fixed bottom-4 right-4 z-50 space-y-2">
+      <div className="fixed right-4 bottom-4 z-50 space-y-2">
         <AnimatePresence>
           {notifications.map((notification) => (
             <motion.div
@@ -81,7 +81,7 @@ export function NotificationProvider({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="flex items-center gap-3 rounded-lg border bg-background p-4 shadow-lg"
+              className="bg-background flex items-center gap-3 rounded-lg border p-4 shadow-lg"
             >
               {getIcon(notification.type)}
               <p className="text-sm">{notification.message}</p>

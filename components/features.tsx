@@ -99,7 +99,7 @@ export function Features() {
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
             Why Choose PackNPlan?
           </h2>
-          <p className="mt-4 text-muted-foreground">
+          <p className="text-muted-foreground mt-4">
             Experience the future of travel planning with our innovative
             features
           </p>
@@ -108,7 +108,7 @@ export function Features() {
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (
             <motion.div key={index} variants={cardVariants}>
-              <Card className="h-full transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-primary/45">
+              <Card className="hover:shadow-primary/45 h-full transition-shadow duration-300 ease-in-out hover:shadow-lg">
                 <CardHeader>
                   <feature.icon className="mb-2 size-8" />
                   <CardTitle className="text-primary">
