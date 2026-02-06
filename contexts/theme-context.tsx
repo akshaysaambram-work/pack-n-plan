@@ -44,16 +44,16 @@ export function ThemeProvider({
   children,
   defaultTheme = "system",
   defaultColor = "blue",
-}: ThemeProviderProps) {
+}: Readonly<ThemeProviderProps>) {
   const [theme, setTheme] = useLocalStorage<Theme>("theme", defaultTheme);
   const [color, setColor] = useLocalStorage<Color>("color", defaultColor);
 
   useEffect(() => {
-    const root = window.document.documentElement;
+    const root = globalThis.document.documentElement;
     root.classList.remove("light", "dark");
 
     if (theme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
+      const systemTheme = globalThis.matchMedia("(prefers-color-scheme: dark)")
         .matches
         ? "dark"
         : "light";
@@ -65,7 +65,7 @@ export function ThemeProvider({
   }, [theme]);
 
   useEffect(() => {
-    const root = window.document.documentElement;
+    const root = globalThis.document.documentElement;
     const colors: Color[] = [
       "zinc",
       "slate",
