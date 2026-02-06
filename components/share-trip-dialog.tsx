@@ -20,7 +20,10 @@ interface ShareTripDialogProps {
   tripName: string;
 }
 
-export function ShareTripDialog({ tripId, tripName }: Readonly<ShareTripDialogProps>) {
+export function ShareTripDialog({
+  tripId,
+  tripName,
+}: Readonly<ShareTripDialogProps>) {
   const [copied, setCopied] = useState(false);
   const { toast } = useToast();
   const shareUrl = `${globalThis.location.origin}/trips/${tripId}`;

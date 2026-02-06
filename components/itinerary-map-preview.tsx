@@ -160,9 +160,7 @@ export function ItineraryMapPreview() {
           {parisLocations.map((location, index) => (
             <Button
               key={index}
-              variant={
-                selectedLocation === location ? "default" : "outline"
-              }
+              variant={selectedLocation === location ? "default" : "outline"}
               className="justify-start"
               onClick={() => {
                 handleMarkerClick(location);

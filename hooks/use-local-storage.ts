@@ -25,7 +25,7 @@ export function useLocalStorage<T>(
     try {
       // Allow value to be a function so we have same API as useState
       const valueToStore =
-        typeof value === 'function' ? value(storedValue) : value;
+        typeof value === "function" ? value(storedValue) : value;
       setStoredValue(valueToStore);
       if (typeof globalThis !== "undefined") {
         globalThis.localStorage.setItem(key, JSON.stringify(valueToStore));

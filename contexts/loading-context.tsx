@@ -17,7 +17,9 @@ const LoadingContext = createContext<LoadingContextType>({
   stopLoading: () => null,
 });
 
-export function LoadingProvider({ children }: Readonly<{ children: React.ReactNode }>) {
+export function LoadingProvider({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   const [isLoading, setIsLoading] = useState(false);
 
   const startLoading = () => setIsLoading(true);

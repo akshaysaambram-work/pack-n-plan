@@ -9,7 +9,9 @@ interface OfflineContextType {
 
 const OfflineContext = createContext<OfflineContextType>({ isOnline: true });
 
-export function OfflineProvider({ children }: Readonly<{ children: React.ReactNode }>) {
+export function OfflineProvider({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   const [isOnline, setIsOnline] = useState(true);
 
   useEffect(() => {
