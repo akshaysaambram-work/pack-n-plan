@@ -19,7 +19,7 @@ const SearchContext = createContext<SearchContextType>({
   isSearching: false,
 });
 
-export function SearchProvider({ children }: { children: React.ReactNode }) {
+export function SearchProvider({ children }: Readonly<{ children: React.ReactNode }>) {
   const [searchTerm, setSearchTerm] = useState("");
   const [isSearching, setIsSearching] = useState(false);
   const debouncedSearchTerm = useDebounce(searchTerm, 500);

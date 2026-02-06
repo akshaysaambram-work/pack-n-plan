@@ -1,16 +1,15 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   GoogleMap,
+  InfoWindow,
   LoadScript,
   Marker,
-  InfoWindow,
 } from "@react-google-maps/api";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Loader, MapPin } from "lucide-react";
+import { useEffect, useState } from "react";
 
 // Mock coordinates for Paris locations
 const parisLocations = [
@@ -162,7 +161,7 @@ export function ItineraryMapPreview() {
             <Button
               key={index}
               variant={
-                selectedLocation === location ? "default" : "outline-solid"
+                selectedLocation === location ? "default" : "outline"
               }
               className="justify-start"
               onClick={() => {

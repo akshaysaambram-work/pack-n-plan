@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { Facebook, Twitter, Instagram, Youtube, Plane } from "lucide-react";
+import { Facebook, Instagram, Plane, Twitter, Youtube } from "lucide-react";
+import Link from "next/link";
 
 const footerLinks = {
   product: [

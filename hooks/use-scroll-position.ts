@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 interface ScrollPosition {
   x: number;
@@ -12,19 +12,19 @@ export function useScrollPosition(): ScrollPosition {
   });
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    if (typeof globalThis === "undefined") return;
 
     const handleScroll = () => {
       setScrollPosition({
-        x: window.scrollX,
-        y: window.scrollY,
+        x: globalThis.scrollX,
+        y: globalThis.scrollY,
       });
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    globalThis.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      globalThis.removeEventListener("scroll", handleScroll);
     };
   }, []);
 

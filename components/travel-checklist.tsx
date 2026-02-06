@@ -95,7 +95,7 @@ export function TravelChecklist() {
               placeholder="Add new item..."
               value={newItem}
               onChange={(e) => setNewItem(e.target.value)}
-              onKeyPress={(e) => e.key === "Enter" && addItem()}
+              onKeyDown={(e) => e.key === "Enter" && addItem()}
             />
             <Button onClick={addItem}>
               <Plus className="h-4 w-4" />

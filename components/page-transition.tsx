@@ -22,7 +22,7 @@ const pageVariants = {
   },
 };
 
-export function PageTransition({ children }: { children: React.ReactNode }) {
+export function PageTransition({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <motion.div
       variants={pageVariants}

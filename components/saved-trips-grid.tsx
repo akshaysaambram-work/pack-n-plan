@@ -88,7 +88,7 @@ export function SavedTripsGrid() {
 
   if (isLoading) {
     return (
-      <div className="flex min-h-[400px] items-center justify-center">
+      <div className="flex min-h-100 items-center justify-center">
         <Plane className="stroke-primary h-8 w-8 animate-pulse" />
       </div>
     );

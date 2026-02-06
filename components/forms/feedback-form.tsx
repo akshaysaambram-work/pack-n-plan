@@ -212,7 +212,7 @@ export function FeedbackForm() {
                   <FormControl>
                     <Textarea
                       placeholder="Please share your thoughts, suggestions, or concerns..."
-                      className="min-h-[150px]"
+                      className="min-h-37.5"
                       {...field}
                     />
                   </FormControl>

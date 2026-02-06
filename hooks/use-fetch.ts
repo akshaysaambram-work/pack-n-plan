@@ -19,7 +19,7 @@ export function useFetch<T>(
 ): FetchState<T> {
   const { initialData, dependencies = [], onSuccess, onError } = options;
   const [state, setState] = useState<FetchState<T>>({
-    data: initialData || null,
+    data: initialData ?? null,
     error: null,
     isLoading: true,
   });

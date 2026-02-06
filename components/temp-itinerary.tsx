@@ -195,7 +195,7 @@ export function TempItinerary() {
             </Badge>
             <Badge variant="secondary" className="flex items-center gap-1">
               <DollarSign className="h-3 w-3" />
-              {Array(mockItinerary.budget).fill("$").join("")}
+              {new Array(mockItinerary.budget).fill("$").join("")}
             </Badge>
             <Badge variant="secondary" className="flex items-center gap-1">
               <Tag className="h-3 w-3" />
@@ -242,7 +242,7 @@ export function TempItinerary() {
                           transition={{ delay: actIndex * 0.1 }}
                           className="relative mb-8 last:mb-0"
                         >
-                          <div className="bg-background ring-muted absolute -left-[41px] flex h-6 w-6 items-center justify-center rounded-full shadow-xs ring-1">
+                          <div className="bg-background ring-muted absolute -left-10.25 flex h-6 w-6 items-center justify-center rounded-full shadow-xs ring-1">
                             <Clock className="h-3 w-3" />
                           </div>
                           <div className="space-y-2">

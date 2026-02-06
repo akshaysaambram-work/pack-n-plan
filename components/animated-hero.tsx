@@ -57,7 +57,7 @@ export function AnimatedHero() {
           Your Journey Begins Here
         </motion.h1>
         <motion.p
-          className="text-muted-foreground mx-auto mt-6 max-w-[700px] text-center text-lg"
+          className="text-muted-foreground mx-auto mt-6 max-w-175 text-center text-lg"
           variants={itemVariants}
         >
           Discover the world with our AI-powered travel companion. Create

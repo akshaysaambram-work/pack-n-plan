@@ -7,9 +7,9 @@ export const string = {
     return str
       .toLowerCase()
       .trim()
-      .replace(/[^\w\s-]/g, "")
-      .replace(/[\s_-]+/g, "-")
-      .replace(/^-+|-+$/g, "");
+      .replaceAll(/[^\w\s-]/g, "")
+      .replaceAll(/[\s_-]+/g, "-")
+      .replaceAll(/^-+|-+$/g, "");
   },
 
   truncate: (str: string, length: number, ending: string = "..."): string => {
@@ -24,8 +24,8 @@ export const string = {
   },
 
   generateUUID: (): string => {
-    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
-      const r = (Math.random() * 16) | 0;
+    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replaceAll(/[xy]/g, (c) => {
+      const r = Math.trunc(Math.random() * 16);
       const v = c === "x" ? r : (r & 0x3) | 0x8;
       return v.toString(16);
     });

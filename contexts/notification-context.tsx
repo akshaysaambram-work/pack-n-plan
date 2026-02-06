@@ -31,9 +31,9 @@ const NotificationContext = createContext<NotificationContextType>({
 
 export function NotificationProvider({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   const [notifications, setNotifications] = useState<Notification[]>([]);
 
   const removeNotification = useCallback((id: string) => {

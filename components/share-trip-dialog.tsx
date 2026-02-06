@@ -20,10 +20,10 @@ interface ShareTripDialogProps {
   tripName: string;
 }
 
-export function ShareTripDialog({ tripId, tripName }: ShareTripDialogProps) {
+export function ShareTripDialog({ tripId, tripName }: Readonly<ShareTripDialogProps>) {
   const [copied, setCopied] = useState(false);
   const { toast } = useToast();
-  const shareUrl = `${window.location.origin}/trips/${tripId}`;
+  const shareUrl = `${globalThis.location.origin}/trips/${tripId}`;
 
   const copyToClipboard = async () => {
     try {

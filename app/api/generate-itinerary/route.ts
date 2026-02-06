@@ -13,7 +13,7 @@ async function getCoordinates(location: string) {
   );
   const data = await response.json();
 
-  if (data.results && data.results[0]) {
+  if (data.results?.[0]) {
     return data.results[0].geometry.location;
   }
 

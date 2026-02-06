@@ -2,7 +2,7 @@ export const storage = {
   set: (key: string, value: any): void => {
     try {
       const serializedValue = JSON.stringify(value);
-      window.localStorage.setItem(key, serializedValue);
+      globalThis.localStorage.setItem(key, serializedValue);
     } catch (error) {
       console.error("Error saving to localStorage:", error);
     }
@@ -10,7 +10,7 @@ export const storage = {
 
   get: <T>(key: string, defaultValue: T): T => {
     try {
-      const item = window.localStorage.getItem(key);
+      const item = globalThis.localStorage.getItem(key);
       return item ? JSON.parse(item) : defaultValue;
     } catch (error) {
       console.error("Error reading from localStorage:", error);
@@ -20,7 +20,7 @@ export const storage = {
 
   remove: (key: string): void => {
     try {
-      window.localStorage.removeItem(key);
+      globalThis.localStorage.removeItem(key);
     } catch (error) {
       console.error("Error removing from localStorage:", error);
     }
@@ -28,7 +28,7 @@ export const storage = {
 
   clear: (): void => {
     try {
-      window.localStorage.clear();
+      globalThis.localStorage.clear();
     } catch (error) {
       console.error("Error clearing localStorage:", error);
     }

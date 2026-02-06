@@ -19,7 +19,7 @@ interface SaveTripButtonProps {
   };
 }
 
-export function SaveTripButton({ tripData }: SaveTripButtonProps) {
+export function SaveTripButton({ tripData }: Readonly<SaveTripButtonProps>) {
   const [isSaving, setIsSaving] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
   const { user } = useAuth();

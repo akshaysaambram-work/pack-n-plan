@@ -33,7 +33,7 @@ const options = {
   zoomControl: true,
 };
 
-export function ItineraryMap({ locations }: ItineraryMapProps) {
+export function ItineraryMap({ locations }: Readonly<ItineraryMapProps>) {
   const [directions, setDirections] =
     useState<google.maps.DirectionsResult | null>(null);
   const [isLoading, setIsLoading] = useState(true);

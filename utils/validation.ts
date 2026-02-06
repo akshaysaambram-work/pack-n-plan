@@ -35,6 +35,6 @@ export const validation = {
   },
 
   isNumeric: (value: string): boolean => {
-    return !isNaN(parseFloat(value)) && isFinite(Number(value));
+    return !Number.isNaN(Number.parseFloat(value)) && Number.isFinite(Number(value));
   },
 };
