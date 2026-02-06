@@ -1,8 +1,5 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { CheckSquare, Plus, Trash2, Save } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -11,9 +8,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
+import { AnimatePresence, motion } from "framer-motion";
+import { CheckSquare, Plus, Save, Trash2 } from "lucide-react";
+import { useState } from "react";
 
 interface ChecklistItem {
   id: string;
@@ -102,7 +102,7 @@ export function TravelChecklist() {
             </Button>
           </div>
 
-          <motion.div className="space-y-2">
+          <motion.div className="grid grid-cols-2 gap-4">
             <AnimatePresence mode="popLayout">
               {items.map((item) => (
                 <motion.div

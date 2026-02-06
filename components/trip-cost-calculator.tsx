@@ -1,11 +1,5 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import * as z from "zod";
-import { Calculator, PlusCircle, MinusCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -17,11 +11,9 @@ import {
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import {
@@ -31,6 +23,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { motion } from "framer-motion";
+import { Calculator, MinusCircle, PlusCircle } from "lucide-react";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
 
 const formSchema = z.object({
   accommodation: z.number().min(0),
@@ -108,54 +106,56 @@ export function TripCostCalculator() {
               )}
             />
 
-            {[
-              { name: "accommodation", label: "Accommodation" },
-              { name: "transportation", label: "Transportation" },
-              { name: "activities", label: "Activities" },
-              { name: "food", label: "Food" },
-              { name: "shopping", label: "Shopping" },
-              { name: "miscellaneous", label: "Miscellaneous" },
-            ].map((item) => (
-              <FormField
-                key={item.name}
-                control={form.control}
-                name={item.name as keyof z.infer<typeof formSchema>}
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>{item.label}</FormLabel>
-                    <div className="flex items-center gap-2">
-                      <FormControl>
-                        <Input
-                          type="number"
-                          {...field}
-                          onChange={(e) =>
-                            field.onChange(Number(e.target.value))
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { name: "accommodation", label: "Accommodation" },
+                { name: "transportation", label: "Transportation" },
+                { name: "activities", label: "Activities" },
+                { name: "food", label: "Food" },
+                { name: "shopping", label: "Shopping" },
+                { name: "miscellaneous", label: "Miscellaneous" },
+              ].map((item) => (
+                <FormField
+                  key={item.name}
+                  control={form.control}
+                  name={item.name as keyof z.infer<typeof formSchema>}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>{item.label}</FormLabel>
+                      <div className="flex items-center gap-2">
+                        <FormControl>
+                          <Input
+                            type="number"
+                            {...field}
+                            onChange={(e) =>
+                              field.onChange(Number(e.target.value))
+                            }
+                          />
+                        </FormControl>
+                        <Button
+                          type="button"
+                          variant="outline"
+                          size="icon"
+                          onClick={() => field.onChange(field.value + 100)}
+                        >
+                          <PlusCircle className="h-4 w-4" />
+                        </Button>
+                        <Button
+                          type="button"
+                          variant="outline"
+                          size="icon"
+                          onClick={() =>
+                            field.onChange(Math.max(0, field.value - 100))
                           }
-                        />
-                      </FormControl>
-                      <Button
-                        type="button"
-                        variant="outline"
-                        size="icon"
-                        onClick={() => field.onChange(field.value + 100)}
-                      >
-                        <PlusCircle className="h-4 w-4" />
-                      </Button>
-                      <Button
-                        type="button"
-                        variant="outline"
-                        size="icon"
-                        onClick={() =>
-                          field.onChange(Math.max(0, field.value - 100))
-                        }
-                      >
-                        <MinusCircle className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </FormItem>
-                )}
-              />
-            ))}
+                        >
+                          <MinusCircle className="h-4 w-4" />
+                        </Button>
+                      </div>
+                    </FormItem>
+                  )}
+                />
+              ))}
+            </div>
 
             <div className="flex flex-col gap-4">
               <Button type="submit">Calculate Total</Button>
