@@ -242,7 +242,7 @@ export function TempItinerary() {
                           transition={{ delay: actIndex * 0.1 }}
                           className="relative mb-8 last:mb-0"
                         >
-                          <div className="absolute -left-[41px] flex h-6 w-6 items-center justify-center rounded-full bg-background shadow-sm ring-1 ring-muted">
+                          <div className="absolute -left-[41px] flex h-6 w-6 items-center justify-center rounded-full bg-background shadow-xs ring-1 ring-muted">
                             <Clock className="h-3 w-3" />
                           </div>
                           <div className="space-y-2">

@@ -24,7 +24,7 @@ export default function PlanPage() {
             <TabsTrigger value="example">Example Itinerary</TabsTrigger>
           </TabsList>
           <TabsContent value="planner">
-            <div className="grid gap-8 lg:grid-cols-[2fr,1fr]">
+            <div className="grid gap-8 lg:grid-cols-[2fr_1fr]">
               <div className="space-y-8">
                 <TripPlanner />
               </div>

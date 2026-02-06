@@ -65,7 +65,7 @@ export function MobileMenu() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.4 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-40 bg-background/80 backdrop-blur-sm md:hidden"
+              className="fixed inset-0 z-40 bg-background/80 backdrop-blur-xs md:hidden"
               onClick={closeMenu}
             />
             <motion.div

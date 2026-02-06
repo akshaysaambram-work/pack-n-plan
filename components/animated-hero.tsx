@@ -33,7 +33,7 @@ export function AnimatedHero() {
       initial="hidden"
       animate="visible"
     >
-      <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-primary/25 to-transparent" />
+      <div className="absolute inset-0 rounded-xl bg-linear-to-b from-primary/25 to-transparent" />
       <motion.div
         className="absolute right-0 top-0 -z-10 h-full w-full"
         animate={{
