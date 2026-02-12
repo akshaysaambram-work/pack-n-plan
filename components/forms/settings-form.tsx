@@ -40,7 +40,7 @@ import { ThemeSwitcher } from "@/components/theme-switcher";
 import { ColorSchemeSwitcher } from "@/components/color-scheme-switcher";
 
 const settingsFormSchema = z.object({
-  email: z.string().email(),
+  email: z.email(),
   language: z.string(),
   emailNotifications: z.boolean(),
   marketingEmails: z.boolean(),

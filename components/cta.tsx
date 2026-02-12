@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Plane } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export function CTA() {
   return (

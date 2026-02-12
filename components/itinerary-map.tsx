@@ -63,8 +63,8 @@ export function ItineraryMap({ locations }: Readonly<ItineraryMapProps>) {
     const directionsRequest = {
       origin: { lat: locations[0].lat, lng: locations[0].lng },
       destination: {
-        lat: locations[locations.length - 1].lat,
-        lng: locations[locations.length - 1].lng,
+        lat: locations.at(-1)?.lat,
+        lng: locations.at(-1)?.lng,
       },
       waypoints: waypoints,
       travelMode: google.maps.TravelMode.DRIVING,
