@@ -27,8 +27,12 @@ Manage sensitive information such as API keys with environment variables. Set up
 - `NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET`
 - `NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID`
 - `NEXT_PUBLIC_FIREBASE_APP_ID`
+
 - `NEXT_PUBLIC_OPENAI_API_KEY`
+
 - `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY`
+
+- `ARCJET_KEY`
 
 ## Getting Started
 

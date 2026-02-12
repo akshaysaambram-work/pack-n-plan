@@ -1,12 +1,5 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import * as z from "zod";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -17,8 +10,15 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/contexts/auth-context";
+import { useToast } from "@/hooks/use-toast";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
 
 const formSchema = z
   .object({
@@ -53,6 +53,22 @@ export function RegisterForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true);
     try {
+      await fetch("/api/arcjet", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: values.email }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.status !== "200") {
+            throw new Error(
+              "Invalid or Disposable Email Address. Please use a different email.",
+            );
+          }
+        });
+
       await signUp(values.email, values.password);
       router.push("/plan");
       toast({
@@ -62,7 +78,8 @@ export function RegisterForm() {
     } catch (error) {
       toast({
         title: "Error",
-        description: "Failed to create account. Please try again.",
+        description:
+          error?.message || "Failed to create account. Please try again.",
         variant: "destructive",
       });
     } finally {
